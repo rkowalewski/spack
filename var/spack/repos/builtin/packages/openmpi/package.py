@@ -396,6 +396,9 @@ class Openmpi(AutotoolsPackage):
             else:
                 config_args.append('--disable-mpi-thread-multiple')
 
+        config_args.append('--enable-mpi-fortran=no')
+        config_args.append('--disable-oshmem')
+        config_args.append('--disable-oshmem-fortran')
         # CUDA support
         # See https://www.open-mpi.org/faq/?category=buildcuda
         if spec.satisfies('@1.7:'):
